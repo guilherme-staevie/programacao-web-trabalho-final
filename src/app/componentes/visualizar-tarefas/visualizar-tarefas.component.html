@@ -59,10 +59,10 @@
       <div class="modal-header">
         <h5 class="modal-title">
           <ng-container *ngIf="form.value.id > 0; else novaTarefa">
-            Editar tarefa
+            Editar lançamento
           </ng-container>
           <ng-template #novaTarefa>
-            Adicionar Tarefa
+            Saque/Depósito
           </ng-template>
         </h5>
       </div>
@@ -136,14 +136,15 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="visualizar">Detalhes da Tarefa</h5>
+        <h5 class="modal-title" id="visualizar">Detalhes do lançamento</h5>
         <button class="close" type="button" data-dismiss="modal" arial-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <p> <strong>Título:</strong>  {{ tarefaVisualizar?.titulo }} </p>
-        <p> <strong>Descrição:</strong>  {{ tarefaVisualizar?.descricao }} </p>
+        <p> <strong>Valor:</strong>  {{ tarefaVisualizar?.titulo }} </p>
+        <p> <strong>Descrição: <i>em contrução</i></strong>  {{ tarefaVisualizar?.descricao }} </p>
+        <!--
         <p> <strong>Status:</strong>  {{ tarefaVisualizar?.status }} </p>
 
         <p> <strong>Data de Início:</strong>
@@ -155,6 +156,7 @@
         <img [src]="tarefaVisualizar?.imagem" alt="Imagem da tarefa"
               *ngIf="tarefaVisualizar?.imagem"
               style="max-width: 100%; max-height: 300px; height: auto;">
+        -->
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>

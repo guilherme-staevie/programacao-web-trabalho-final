@@ -131,7 +131,7 @@ export class VisualizarTarefasComponent implements OnInit {
         icon: 'warning',
         showCancelButton: true,
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Sim, deletar tarefa!',
+        confirmButtonText: 'Sim, deletar lançamento!',
         confirmButtonColor: '#3085d6'
       }).then((tipoBotao) => {
         if(tipoBotao.isConfirmed){
@@ -181,13 +181,13 @@ export class VisualizarTarefasComponent implements OnInit {
       this.tarefaService.atualizarTarefa(this.form.value.id, editarTarefa)
         .then(reposta => {
           if(reposta === 1){
-            Swal.fire('Sucesso!','Tarefa editada com sucesso.','success');
+            Swal.fire('Sucesso!','Lançamento editado com sucesso.','success');
             this.form.reset();
             this.closeModal();
             this.listarTarefas();
             this.atualizarSoma(); // Atualiza a soma após editar a tarefa
           }else{
-            Swal.fire('Atenção','Nenhuma tarefa encontrada, ou nenhuma alteração' +
+            Swal.fire('Atenção','Nenhum lançamento encontrado, ou nenhuma alteração' +
               ' necessária', 'info');
           }
         }).catch(error => {
